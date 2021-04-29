@@ -4,7 +4,7 @@
 
 - [Brief](###Brief)
 
-###Brief
+### Brief
 
 The overall objective for this project is:
 
