@@ -2,7 +2,7 @@
 
 ## Contents
 
-- [Brief](#Brief)
+- [Brief](#brief)
   - [Additional Requirements](#additional-requirements)
 
 ## Brief
