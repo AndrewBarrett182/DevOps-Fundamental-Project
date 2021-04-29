@@ -1,6 +1,6 @@
 # DevOps Fundamental Project - TF2 Trading
 
-### Contents
+## Contents
 
 - [Brief](###Brief)
 
