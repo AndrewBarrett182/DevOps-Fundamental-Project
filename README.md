@@ -5,7 +5,7 @@
 - [Brief](#brief)
   - [Additional Requirements](#additional-requirements)
 - [Architecture](#architecture)
-  - [Database Structure](#database-strcuture)
+  - [Database Structure](#database-structure)
 
 ## Brief
 
