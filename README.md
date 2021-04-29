@@ -3,7 +3,7 @@
 ## Contents
 
 - [Brief](#Brief)
-  - [Additional Requirements](#Additional Requirements)
+  - [Additional Requirements](#additional-requirements)
 
 ## Brief
 
