@@ -12,23 +12,3 @@ The overall objective for this project is:
 
 This is to demonstrate my capability with the technologies and concepts I have been taught and assessing my development against the SFIA framework. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1
