@@ -4,6 +4,8 @@
 
 - [Brief](#brief)
   - [Additional Requirements](#additional-requirements)
+- [Architecture](#architecture)
+  - [Database Structure](#database-strcuture)
 
 ## Brief
 
@@ -30,3 +32,9 @@ A list of the scope/requirements of this project are as follows:
 > - A functioning front-end website and integrated API's, using Flask.
 >
 > - Code fully integrated into a Version Control System using the Feature-Branch model which will subsequently be built through a CI server and deployed to a cloud-based virtual machine.
+
+## Architecture
+
+### Database Structure
+
+The database structure for the project is displayed using an Entity Relationship Diagram (ERD). This diagram displays the design of the tables associated with the database.
