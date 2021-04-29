@@ -1,4 +1,4 @@
-# DevOps Fundamental Project - TF2 Trading
+# DevOps Fundamental Project - Trading / Online Marketplace
 
 ## Contents
 
