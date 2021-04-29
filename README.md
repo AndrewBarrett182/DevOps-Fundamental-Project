@@ -2,7 +2,7 @@
 
 ## Contents
 
-- [Brief](###Brief)
+- [Brief](#Brief)
 
 ### Brief
 
