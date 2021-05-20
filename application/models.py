@@ -14,7 +14,7 @@ class Inventory(db.Model):
     name = db.Column(db.String(30), nullable = False)
     stock = db.Column(db.Integer, default = 0)
     price = db.Column(db.Float, default = 0)
-    # for_sale = db.Column(db.Boolean, nullable = False)
+    for_sale = db.Column(db.Boolean, nullable = False)
     user_id = db.Column(db.String(30), db.ForeignKey('users.username'), nullable = False)
 
 class LoginForm(FlaskForm):
@@ -30,11 +30,14 @@ class ItemsForm(FlaskForm):
     add_item = SubmitField("Add New Item")
     update = SubmitField("Update Item Details")
     delete = SubmitField("Delete")
-    order = SelectField('Sort by', choices = [("Oldest", "Oldest"), ("Newest", "Newest"), ("A-Z", "A-Z"), ("Z-A", "Z-A"), ("Stock ↑", "Stock ↑"), ("Stock ↓", "Stock ↓"), ("Price ↑", "Price ↑"), ("Price ↓", "Price ↓")])
+    order = SelectField('Sort by', choices = [("Oldest", "Oldest"), ("Newest", "Newest"), ("A-Z", "A-Z"), ("Z-A", "Z-A"), 
+                                              ("Stock ↑", "Stock ↑"), ("Stock ↓", "Stock ↓"), ("Price ↑", "Price ↑"), 
+                                              ("Price ↓", "Price ↓"), ("For Sale", "For Sale"), ("Not For Sale", "Not For Sale")])
     submit = SubmitField('Submit')
     back = SubmitField("Back")
     stock = IntegerField("Stock")
     price = FloatField("Price")
+    for_sale = BooleanField("For Sale?")
     # task = StringField('Task')
     # submit_task = SubmitField('Add Task')
     # complete = SubmitField('Complete Task')

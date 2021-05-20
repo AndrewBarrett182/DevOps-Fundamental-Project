@@ -94,6 +94,7 @@ def add(username):
         back = form.back.data
         stock = form.stock.data
         price = form.price.data
+        for_sale = form.for_sale.data
 
         if add == True:
             if len(name) == 0:
@@ -112,7 +113,7 @@ def add(username):
                 error = "Please enter valid price"
 
             else:
-                new = Inventory(name = name.capitalize(), stock = stock, price = price, user_id = username)
+                new = Inventory(name = name.capitalize(), stock = stock, price = price, for_sale = for_sale, user_id = username)
                 db.session.add(new)
                 db.session.commit()
                 return redirect(url_for("home", username = username))
@@ -141,6 +142,7 @@ def update(id, username):
             form.name.data = i.name
             form.stock.data = i.stock
             form.price.data = i.price
+            form.for_sale.data = i.for_sale
 
     if request.method == 'POST':
         name = form.name.data
@@ -149,6 +151,7 @@ def update(id, username):
         back = form.back.data
         stock = form.stock.data
         price = form.price.data
+        for_sale = form.for_sale.data
 
         if update == True:
             if len(name) == 0:
@@ -171,6 +174,7 @@ def update(id, username):
                 updated.name = name
                 updated.stock = stock
                 updated.price = price
+                updated.for_sale = for_sale
                 db.session.commit()
                 return redirect(url_for("home", username = username))
         
@@ -243,6 +247,10 @@ def order(username):
                 all = Inventory.query.order_by(Inventory.price.desc()).all()
             elif order == "Price ↓":
                 all = Inventory.query.order_by(Inventory.price).all()
+            elif order == "For Sale":
+                all = Inventory.query.order_by(Inventory.for_sale.desc()).all()
+            elif order == "Not For Sale":
+                all = Inventory.query.order_by(Inventory.for_sale).all()
 
     return render_template('home.html', form = form, message = error, username = username, all = all)
 
