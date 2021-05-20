@@ -254,6 +254,26 @@ def order(username):
 
     return render_template('home.html', form = form, message = error, username = username, all = all)
 
+@app.route('/buy/<username>', methods = ['GET', 'POST'])
+def buy(username):
+    error = ""
+    form = ItemsForm()
+    all = Inventory.query.filter((Inventory.user_id != username), (Inventory.stock > 0), (Inventory.for_sale == True)).all()
+
+    return render_template('buy.html', form = form, message = error, username = username, all = all)
+
+@app.route('/cart/<username>/<id>', methods = ['GET', 'POST'])
+def cart(username, id):
+    item = Inventory.query.filter_by(id=id).first()
+    if item.stock == 1:
+        db.session.delete(item)
+        db.session.commit()
+        return redirect(url_for("buy", username = username))
+    else:
+        item.stock = item.stock - 1
+        db.session.commit()
+        return redirect(url_for("buy", username = username))
+
 # def todo():
 #     form = AddForm()
 #     all_todo = Todos.query.all()

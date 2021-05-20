@@ -38,6 +38,7 @@ class ItemsForm(FlaskForm):
     stock = IntegerField("Stock")
     price = FloatField("Price")
     for_sale = BooleanField("For Sale?")
+    buy = SubmitField("Buy Item")
     # task = StringField('Task')
     # submit_task = SubmitField('Add Task')
     # complete = SubmitField('Complete Task')

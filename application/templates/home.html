@@ -2,7 +2,8 @@
 {% block body %}
 Logged in as: {{ username }} <br> <br>
 <a href = {{ url_for('login') }}>Logout</a><br> <br>
-<a href = {{ url_for('add', username = username) }}>Add New Item</a> <br> <br>
+<a href = {{ url_for('add', username = username) }}>Add New Item</a> 
+<a href = {{ url_for('buy', username = username) }}>Buy New Item</a> <br> <br>
 Owned Items:<br>
 <div class='form'>
     <br>

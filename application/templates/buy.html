@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+Logged in as: {{ username }} <br> <br>
+<a href = {{ url_for('login') }}>Logout</a><br> <br>
+{% for i in all %}
+<div class='form'>
+    Name: {{ i.name }}<br>
+    Price: {{ i.price }}<br>
+    Stock: {{ i.stock }}<br>
+    <form method='POST' action="{{ url_for('cart', username = username, id = i.id) }}">
+        {{ form.hidden_tag() }}
+        {{ form.buy }}
+    </form>
+</div>
+<br>
+{% endfor %}
+
+{% endblock body %}
