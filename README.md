@@ -104,11 +104,9 @@ For my project, I decided to create an application for a simple online marketpla
 
 The database structure for the project is displayed using an Entity Relationship Diagram (ERD). This diagram displays the design of the tables associated with the database.
 
-https://lucid.app/documents#/dashboard
+![image](https://user-images.githubusercontent.com/82821693/119006315-2c9b5400-b988-11eb-8b37-0567968ee0de.png)
 
-https://lucid.app/lucidchart/97257df1-efd7-4b00-a8ff-8f5ebd8498f4/view?page=0_0#
-
-The ERD contains two tables: User and Items. As seen in the ERD, there is a one-to-many relationship between these two tables. This is because 1 user can own many items, but 1 item can only belong to 1 user.
+The ERD contains two tables: Users and Inventory. As seen in the ERD, there is a one-to-many relationship between these two tables. This is because 1 user can own many items, but 1 item can only belong to 1 user.
 
 ## Project Tracking
 
