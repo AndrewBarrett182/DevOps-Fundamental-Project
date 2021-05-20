@@ -92,12 +92,17 @@ def add(username):
         name = form.name.data
         add = form.add_item.data
         back = form.back.data
+        stock = form.stock.data
 
         if add == True:
             if len(name) == 0:
                 error = "Please enter an item name"
+            elif isinstance(stock, int) == False:
+                error = "Please enter valid stock amount"
+            elif len(str(stock)) == 0 or stock < 0:
+                error = "Please enter valid stock amount"
             else:
-                new = Inventory(name = name.capitalize(), user_id = username)
+                new = Inventory(name = name.capitalize(), stock = stock, user_id = username)
                 db.session.add(new)
                 db.session.commit()
                 return redirect(url_for("home", username = username))
@@ -124,20 +129,29 @@ def update(id, username):
     if request.method == 'GET':
         for i in all:
             form.name.data = i.name
+            form.stock.data = i.stock
 
     if request.method == 'POST':
         name = form.name.data
         update = form.update.data
         delete = form.delete.data
         back = form.back.data
+        stock = form.stock.data
 
         if update == True:
             if len(name) == 0:
-                error = "Please Enter an Item Name"
+                error = "Please enter an item name"
+
+            elif isinstance(stock, int) == False:
+                error = "Please enter valid stock amount"
+
+            elif len(str(stock)) == 0 or stock < 0:
+                error = "Please enter valid stock amount"
 
             else:
                 updated = Inventory.query.filter_by(id = id).first()
                 updated.name = name
+                updated.stock = stock
                 db.session.commit()
                 return redirect(url_for("home", username = username))
         
@@ -200,6 +214,12 @@ def order(username):
                 all = Inventory.query.order_by(Inventory.id.desc()).all()
             elif order == "A-Z":
                 all = Inventory.query.order_by(Inventory.name).all()
+            elif order == "Z-A":
+                all = Inventory.query.order_by(Inventory.name.desc()).all()
+            elif order == "Stock ↑":
+                all = Inventory.query.order_by(Inventory.stock.desc()).all()
+            elif order == "Stock ↓":
+                all = Inventory.query.order_by(Inventory.stock).all()
 
     return render_template('home.html', form = form, message = error, username = username, all = all)
 

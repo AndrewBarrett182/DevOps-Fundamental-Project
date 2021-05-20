@@ -14,7 +14,8 @@ Owned Items:<br>
 {% for i in all %}
 <div class='form'>
     ID: {{ i.id }}<br>
-    Name: <a href = {{ url_for('update', id = i.id, username = username) }}>{{ i.name }}</a>
+    Name: <a href = {{ url_for('update', id = i.id, username = username) }}>{{ i.name }}</a><br>
+    Stock: {{ i.stock }}
 </div>
  <br>
 {% endfor %}

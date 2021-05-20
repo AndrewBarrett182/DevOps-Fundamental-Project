@@ -4,7 +4,8 @@
     <form method='POST' action="{{ url_for('add', username = username) }}">
         {{ form.hidden_tag() }}
         {{ form.back }}<br><br><br>
-        {{ form.name.label }} {{ form.name }}  <br> <br>
+        {{ form.name.label }} {{ form.name }}  <br> 
+        {{ form.stock.label }} {{ form.stock }}<br> <br>
         {{ message }} <br>
         {{ form.add_item }}
     </form>

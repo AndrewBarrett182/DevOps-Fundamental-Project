@@ -5,7 +5,8 @@
     <br>
     <form method='POST' action="{{ url_for('update', username = username, id = id) }}">
         {{ form.hidden_tag() }}
-        {{ form.name.label }} {{ form.name }}
+        {{ form.name.label }} {{ form.name }}<br>
+        {{ form.stock.label }} {{ form.stock }}
         <br><br>
         {{ form.update }} {{ form.delete }} {{ form.back }} {{ message }}
     </form>

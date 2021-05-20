@@ -1,7 +1,7 @@
 from application import db
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
-from wtforms.fields.core import BooleanField, SelectField
+from wtforms.fields.core import BooleanField, IntegerField, SelectField
 from wtforms.fields.simple import PasswordField
 
 class Users(db.Model):
@@ -12,7 +12,7 @@ class Users(db.Model):
 class Inventory(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(30), nullable = False)
-    # stock = db.Column(db.Integer, nullable = False)
+    stock = db.Column(db.Integer, default = 0)
     # price = db.Column(db.Float, nullable = False)
     # for_sale = db.Column(db.Boolean, nullable = False)
     user_id = db.Column(db.String(30), db.ForeignKey('users.username'), nullable = False)
@@ -30,9 +30,10 @@ class ItemsForm(FlaskForm):
     add_item = SubmitField("Add New Item")
     update = SubmitField("Update Item Details")
     delete = SubmitField("Delete")
-    order = SelectField('Sort by', choices = [("Oldest", "Oldest"), ("Newest", "Newest"), ("A-Z", "A-Z")])
+    order = SelectField('Sort by', choices = [("Oldest", "Oldest"), ("Newest", "Newest"), ("A-Z", "A-Z"), ("Z-A", "Z-A"), ("Stock ↑", "Stock ↑"), ("Stock ↓", "Stock ↓")])
     submit = SubmitField('Submit')
     back = SubmitField("Back")
+    stock = IntegerField("Stock")
     # task = StringField('Task')
     # submit_task = SubmitField('Add Task')
     # complete = SubmitField('Complete Task')
