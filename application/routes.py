@@ -270,11 +270,11 @@ def buy(username):
 @app.route('/cart/<username>/<id>', methods = ['GET', 'POST'])
 def cart(username, id):
     item = Inventory.query.filter_by(id=id).first()
-    if item.stock == 1:
-        db.session.delete(item)
+    item.stock = item.stock - 1
+    if item.stock == 0:
+        item.for_sale = False
         db.session.commit()
         return redirect(url_for("buy", username = username))
     else:
-        item.stock = item.stock - 1
         db.session.commit()
         return redirect(url_for("buy", username = username))
