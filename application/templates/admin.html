@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% block body %}
-Logged in as: admin <br> <br>
+Logged in as: admin <br><br>
+<a href = {{ url_for('login') }}>Logout</a><br> <br>
 <h3>Users:</h3>
 {% for i in all %}
 <div class='form'>

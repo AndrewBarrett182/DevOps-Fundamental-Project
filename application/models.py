@@ -23,12 +23,16 @@ class LoginForm(FlaskForm):
     login = SubmitField('Login')
     register = SubmitField('Create a New Account')
     delete = SubmitField("Delete")
+    back = SubmitField("Back")
 
 class ItemsForm(FlaskForm):
     name = StringField("Item Name")
     add_item = SubmitField("Add New Item")
     update = SubmitField("Update Item Details")
     delete = SubmitField("Delete")
+    order = SelectField('Sort by', choices = [("Oldest", "Oldest"), ("Newest", "Newest"), ("A-Z", "A-Z")])
+    submit = SubmitField('Submit')
+    back = SubmitField("Back")
     # task = StringField('Task')
     # submit_task = SubmitField('Add Task')
     # complete = SubmitField('Complete Task')

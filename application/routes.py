@@ -91,15 +91,19 @@ def add(username):
     if request.method == 'POST':
         name = form.name.data
         add = form.add_item.data
+        back = form.back.data
 
         if add == True:
             if len(name) == 0:
                 error = "Please enter an item name"
             else:
-                new = Inventory(name = name, user_id = username)
+                new = Inventory(name = name.capitalize(), user_id = username)
                 db.session.add(new)
                 db.session.commit()
                 return redirect(url_for("home", username = username))
+        
+        if back == True:
+            return redirect(url_for("home", username = username))
 
     return render_template('add.html', form = form, message = error, username = username)
 
@@ -125,6 +129,7 @@ def update(id, username):
         name = form.name.data
         update = form.update.data
         delete = form.delete.data
+        back = form.back.data
 
         if update == True:
             if len(name) == 0:
@@ -138,6 +143,9 @@ def update(id, username):
         
         if delete == True:
             return redirect(url_for("delete", id = id, username = username))
+
+        if back == True:
+            return redirect(url_for("home", username = username))
 
     return render_template('update.html', form = form, message = error, username = username, all = all, id = id)
 
@@ -153,16 +161,16 @@ def edit_admin(username):
     error = ""
     form = LoginForm()
     all = Users.query.filter_by(username = username).all()
-
-    # if request.method == 'GET':
-    #     for i in all:
-    #         form.username.data = i.username
     
     if request.method == 'POST':
         delete = form.delete.data
+        back = form.back.data
 
         if delete == True:
             return redirect(url_for("admin_delete", username = username))
+        
+        if back == True:
+            return redirect(url_for("admin"))
 
     return render_template('update_admin.html', form = form, message = error, all = all)
 
@@ -175,6 +183,25 @@ def admin_delete(username):
         db.session.delete(i)
     db.session.commit()
     return redirect(url_for("admin"))
+
+@app.route('/order/<username>', methods = ['GET', 'POST'])
+def order(username):
+    error = ""
+    form = ItemsForm()
+    all = Inventory.query.filter_by(user_id = username).all()
+
+    if request.method == 'POST':
+        order = form.order.data
+        submit = form.submit.data
+        if submit == True:
+            if order == "Oldest":
+                all = Inventory.query.order_by(Inventory.id).all()
+            elif order == "Newest":
+                all = Inventory.query.order_by(Inventory.id.desc()).all()
+            elif order == "A-Z":
+                all = Inventory.query.order_by(Inventory.name).all()
+
+    return render_template('home.html', form = form, message = error, username = username, all = all)
 
 # def todo():
 #     form = AddForm()

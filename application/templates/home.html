@@ -1,12 +1,20 @@
 {% extends "layout.html" %}
 {% block body %}
 Logged in as: {{ username }} <br> <br>
+<a href = {{ url_for('login') }}>Logout</a><br> <br>
 <a href = {{ url_for('add', username = username) }}>Add New Item</a> <br> <br>
-Owned Items:<br><br>
+Owned Items:<br>
+<div class='form'>
+    <br>
+    <form method='POST' action="{{ url_for('order', username = username) }}">
+        {{ form.hidden_tag() }}
+        {{ form.order.label }} {{ form.order }} {{ form.submit }}
+    </form>
+</div>
 {% for i in all %}
 <div class='form'>
-    {{ i.id }}
-    <a href = {{ url_for('update', id = i.id, username = username) }}>{{ i.name }}</a>
+    ID: {{ i.id }}<br>
+    Name: <a href = {{ url_for('update', id = i.id, username = username) }}>{{ i.name }}</a>
 </div>
  <br>
 {% endfor %}
