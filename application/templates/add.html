@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class='form'>
+    <br>
+    <form method='POST' action="{{ url_for('add', username = username) }}">
+        {{ form.hidden_tag() }}
+        {{ form.name.label }} {{ form.name }}  <br> <br>
+        {{ message }} <br>
+        {{ form.add_item }}
+    </form>
+</div>
+{% endblock body %}

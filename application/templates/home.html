@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body %}
+Logged in as: {{ username }} <br> <br>
+<a href = {{ url_for('add', username = username) }}>Add New Item</a> <br> <br>
+Owned Items:<br><br>
+{% for i in all %}
+<div class='form'>
+    {{ i.id }}
+    <a href = {{ url_for('update', id = i.id, username = username) }}>{{ i.name }}</a>
+</div>
+ <br>
+{% endfor %}
+{% endblock body %}

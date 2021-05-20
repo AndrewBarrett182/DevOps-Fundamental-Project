@@ -1,0 +1,14 @@
+{% extends "home.html" %}
+{% block body2 %}
+{% for i in all %}
+<div class='form'>
+    <form method='POST' action="{{ url_for('update', username = username, id = id) }}">
+        {{ form.hidden_tag() }}
+        {{ form.name.label }} {{ form.name }}
+        <br><br>
+        {{ form.update }} {{ form.delete }} {{ message }}
+    </form>
+</div>
+<br>
+{% endfor %}
+{% endblock body2 %}

@@ -6,6 +6,7 @@
   - [Additional Requirements](#additional-requirements)
 - [Architecture](#architecture)
   - [Database Structure](#database-structure)
+- [Project Tracking](#project-tracking)
 
 ## Brief
 
@@ -43,4 +44,7 @@ https://lucid.app/documents#/dashboard
 
 https://lucid.app/lucidchart/97257df1-efd7-4b00-a8ff-8f5ebd8498f4/view?page=0_0#
 
-The ERD contains two tables: User and Items. As seen in the ERD, there is a one-to-many relationship between these two tables. This is because 1 user can own many items, but 1 item can only belong to 1 owner.
+The ERD contains two tables: User and Items. As seen in the ERD, there is a one-to-many relationship between these two tables. This is because 1 user can own many items, but 1 item can only belong to 1 user.
+
+## Project Tracking
+

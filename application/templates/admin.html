@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block body %}
+Logged in as: admin <br> <br>
+<h3>Users:</h3>
+{% for i in all %}
+<div class='form'>
+    {{ i.username }}
+    <a href = {{ url_for('edit_admin', username = i.username) }}>Edit Details</a><br> <br>
+</div>
+{% endfor %}
+{% endblock body %}

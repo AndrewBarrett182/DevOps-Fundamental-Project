@@ -1,0 +1,15 @@
+{% extends "admin.html" %}
+{% block body2 %}
+{% for i in all %}
+<br><br>
+<div class='form'>
+    <form method='POST' action="{{ url_for('edit_admin', username = i.username) }}">
+        {{ form.hidden_tag() }}
+        {{ form.username.label }}: {{ i.username }}
+        <br><br>
+        {{ form.delete }} {{ message }}
+    </form>
+</div>
+<br>
+{% endfor %}
+{% endblock body2 %}
