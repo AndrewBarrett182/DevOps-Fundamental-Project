@@ -93,16 +93,26 @@ def add(username):
         add = form.add_item.data
         back = form.back.data
         stock = form.stock.data
+        price = form.price.data
 
         if add == True:
             if len(name) == 0:
                 error = "Please enter an item name"
+
             elif isinstance(stock, int) == False:
                 error = "Please enter valid stock amount"
+
             elif len(str(stock)) == 0 or stock < 0:
                 error = "Please enter valid stock amount"
+
+            elif isinstance(price, float) == False:
+                error = "Please enter valid price"
+
+            elif len(str(price)) == 0 or price < 0:
+                error = "Please enter valid price"
+
             else:
-                new = Inventory(name = name.capitalize(), stock = stock, user_id = username)
+                new = Inventory(name = name.capitalize(), stock = stock, price = price, user_id = username)
                 db.session.add(new)
                 db.session.commit()
                 return redirect(url_for("home", username = username))
@@ -130,6 +140,7 @@ def update(id, username):
         for i in all:
             form.name.data = i.name
             form.stock.data = i.stock
+            form.price.data = i.price
 
     if request.method == 'POST':
         name = form.name.data
@@ -137,6 +148,7 @@ def update(id, username):
         delete = form.delete.data
         back = form.back.data
         stock = form.stock.data
+        price = form.price.data
 
         if update == True:
             if len(name) == 0:
@@ -148,10 +160,17 @@ def update(id, username):
             elif len(str(stock)) == 0 or stock < 0:
                 error = "Please enter valid stock amount"
 
+            elif isinstance(price, float) == False:
+                error = "Please enter valid price"
+
+            elif len(str(price)) == 0 or price < 0:
+                error = "Please enter valid price"
+
             else:
                 updated = Inventory.query.filter_by(id = id).first()
                 updated.name = name
                 updated.stock = stock
+                updated.price = price
                 db.session.commit()
                 return redirect(url_for("home", username = username))
         
@@ -220,6 +239,10 @@ def order(username):
                 all = Inventory.query.order_by(Inventory.stock.desc()).all()
             elif order == "Stock ↓":
                 all = Inventory.query.order_by(Inventory.stock).all()
+            elif order == "Price ↑":
+                all = Inventory.query.order_by(Inventory.price.desc()).all()
+            elif order == "Price ↓":
+                all = Inventory.query.order_by(Inventory.price).all()
 
     return render_template('home.html', form = form, message = error, username = username, all = all)
 
