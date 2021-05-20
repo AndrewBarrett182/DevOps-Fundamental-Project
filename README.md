@@ -7,6 +7,7 @@
   - [My Approach](#my-approach)
 - [Architecture](#architecture)
   - [Database Structure](#database-structure)
+  - [CI Pipeline](#ci-pipeline)
 - [Project Tracking](#project-tracking)
 
 ## Brief
@@ -107,6 +108,10 @@ The database structure for the project is displayed using an Entity Relationship
 ![image](https://user-images.githubusercontent.com/82821693/119006315-2c9b5400-b988-11eb-8b37-0567968ee0de.png)
 
 The ERD contains two tables: Users and Inventory. As seen in the ERD, there is a one-to-many relationship between these two tables. This is because 1 user can own many items, but 1 item can only belong to 1 user.
+
+### CI Pipeline
+
+
 
 ## Project Tracking
 
