@@ -9,10 +9,16 @@ Logged in as: {{ username }} <br> <br>
     Stock: {{ i.stock }}<br>
     <form method='POST' action="{{ url_for('cart', username = username, id = i.id) }}">
         {{ form.hidden_tag() }}
-        {{ form.buy }}
+        {{ form.buy }}<br>
     </form>
 </div>
 <br>
 {% endfor %}
+<div class='form'>
+    <form method='POST' action="{{ url_for('home', username = username) }}">
+        {{ form.hidden_tag() }}
+        {{ form.back }}<br>
+    </form>
+</div>
 
 {% endblock body %}

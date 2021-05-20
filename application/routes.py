@@ -260,6 +260,11 @@ def buy(username):
     form = ItemsForm()
     all = Inventory.query.filter((Inventory.user_id != username), (Inventory.stock > 0), (Inventory.for_sale == True)).all()
 
+    if request.method == 'POST':
+        back = form.back.data
+        if back == True:
+            return redirect(url_for("home", username = username))
+    
     return render_template('buy.html', form = form, message = error, username = username, all = all)
 
 @app.route('/cart/<username>/<id>', methods = ['GET', 'POST'])
