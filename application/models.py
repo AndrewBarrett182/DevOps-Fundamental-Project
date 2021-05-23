@@ -14,7 +14,7 @@ class Inventory(db.Model):
     name = db.Column(db.String(30), nullable = False)
     stock = db.Column(db.Integer, default = 0)
     price = db.Column(db.Float, default = 0)
-    for_sale = db.Column(db.Boolean, nullable = False)
+    for_sale = db.Column(db.Boolean, default = False)
     user_id = db.Column(db.String(30), db.ForeignKey('users.username'), nullable = False)
 
 class LoginForm(FlaskForm):
