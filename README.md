@@ -10,6 +10,7 @@
   - [CI Pipeline](#ci-pipeline)
 - [Project Tracking](#project-tracking)
 - [Risk Assessment](#risk-assessment)
+- [Testing](#testing)
 
 ## Brief
 
@@ -158,3 +159,7 @@ The cards within the board have epics assigned to them so that it is clear what 
 ## Risk Assessment
 
 ![image](https://user-images.githubusercontent.com/82821693/119288666-e6bce500-bc40-11eb-92c0-deb79e86b2f3.png)
+
+## Testing
+
+To perform the testing for the project, pytest was used. This is true for both unit and integration testing. How this works is essentially by creating a dummy test database with preset information, performing a function, and then deleting those changes. This process is repeated for as many tests written. Results are obtained through assertion such that the output value would be something known and can be checked with the test values. By explicitly asking, it is possible for the pytest command to yield a coverage report which shows the proportion of the code that has been tested.
