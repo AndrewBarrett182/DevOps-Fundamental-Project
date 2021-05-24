@@ -9,6 +9,7 @@
   - [Database Structure](#database-structure)
   - [CI Pipeline](#ci-pipeline)
 - [Project Tracking](#project-tracking)
+- [Risk Assessment](#risk-assessment)
 
 ## Brief
 
@@ -113,6 +114,19 @@ The ERD contains two tables: Users and Inventory. As seen in the ERD, there is a
 
 ![image](https://user-images.githubusercontent.com/82821693/119286046-6778e280-bc3b-11eb-824d-7c117f60b7d3.png)
 
+This is the Continuous Integration (CI) pipeline for this project. A flask framework was used working in conjuction with a Google Cloud Platform (GCP) Virtual Machine (VM) instance. Continuous Integration enables the development process to be more frequent and more reliable. 
+
+This project uses a Jenkins CI server to handle the pipeline. It retrieves the code from the repository on GitHub and then performs these build instructions:
+- Installing python
+- Installing pip
+- Installing gunicorn
+- Installing all the packages in the requirements.txt file
+- Creates the DATABASE_URI and the SECRET_KEY
+- Runs the application
+
+If there is a fault within the build process, the application will fail to run and the error reasoning can be easily obtained through the console output. 
+
+Once the build is successful, the application runs using the gunicorn command. Gunicorn is a type of Web Server Gateway Interface (WSGI) HTTP server. It uses a pre-fork worker model that consists of 4 workers which is what is recommended in the Gunicorn documentation.
 
 ## Project Tracking
 
@@ -121,3 +135,25 @@ To track the progress of the project, Jira was used.
 https://andrewbarrett.atlassian.net/jira/software/projects/TOM/boards/1
 
 ![image](https://user-images.githubusercontent.com/82821693/119284143-ee778c00-bc36-11eb-8266-a3ec720b1c0e.png)
+
+The Jira board uses a Kanban format that consists of 3 different columns:
+- To Do
+- In Progress
+- Done
+
+The cards within the board have epics assigned to them so that it is clear what the issue refers to. The epics that make up this board are:
+- Documentation
+  - This is referring to all the documents that was to be used in the creation of this README.
+- User Stories
+  - These are the implementations that correspond to a user's actions.
+- Admin
+  - These are the implementations that correspond to the admin actions.
+- Database
+  - These refer to the tables created in the database.
+- Testing
+  - Everything here refers to the testing processu: unit testing, integration testing, and results.
+- Integration
+  - This refers to the deployment of the application on GCP and Jenkins.
+
+## Risk Assessment
+
