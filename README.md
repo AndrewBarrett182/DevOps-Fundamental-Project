@@ -115,3 +115,7 @@ The ERD contains two tables: Users and Inventory. As seen in the ERD, there is a
 
 ## Project Tracking
 
+To track the progress of the project, Jira was used. 
+
+https://andrewbarrett.atlassian.net/jira/software/projects/TOM/boards/1
+
