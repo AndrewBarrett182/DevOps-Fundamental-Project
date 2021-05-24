@@ -12,6 +12,9 @@
 - [Risk Assessment](#risk-assessment)
 - [Testing](#testing)
 - [Front-End Design](#front-end-design)
+- [Known Issues](#known-issues)
+- [Future Improvements](#future-improvements)
+- [Author](#author)
 
 ## Brief
 
@@ -203,3 +206,21 @@ The user also has the opportunity to sort their items in their desired way:
 
 ![image](https://user-images.githubusercontent.com/82821693/119290879-4fa65c00-bc45-11eb-9891-e7fb2028daa1.png)
 
+## Known Issues
+
+An issue with the program currently is that the login function doesn't actually work as desired. It is able to redirect correctly to the user's page but there is no resticted access at the moment. This means that if a user logs in to their account, a different user can also log in to their account buy changing the url to include their username.
+
+## Future Improvements
+
+The future improvements for this project includes:
+- The implementation of a many-to-many relationship
+  - To create a Sales table with an intermediary Trade_Items table to store information of user's purchases
+- Implement a way to randomly shuffle the items that are for sale so that a user doesn't always see the same things
+- Implement a search function so a user can easily find something if the database gets much bigger
+- Make the user interface much more prettier and inviting
+- Give the admin user more functionality as at the moment, the admin can only delete accounts
+- Allow a user to delete their account as well
+
+## Author
+
+Andrew Barrett
