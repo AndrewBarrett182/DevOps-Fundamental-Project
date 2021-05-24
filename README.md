@@ -11,6 +11,8 @@
 - [Project Tracking](#project-tracking)
 - [Risk Assessment](#risk-assessment)
 - [Testing](#testing)
+  - [Instructions to run Unit Testing](#instructions-to-run-unit-testing)
+  - [Instructions to run Integration Testing](#instructions-to-run-integration-testing)
 - [Front-End Design](#front-end-design)
 - [Known Issues](#known-issues)
 - [Future Improvements](#future-improvements)
@@ -167,6 +169,30 @@ The cards within the board have epics assigned to them so that it is clear what 
 ## Testing
 
 To perform the testing for the project, pytest was used. This is true for both unit and integration testing. How this works is essentially by creating a dummy test database with preset information, performing a function, and then deleting those changes. This process is repeated for as many tests written. Results are obtained through assertion such that the output value would be something known and can be checked with the test values. By explicitly asking, it is possible for the pytest command to yield a coverage report which shows the proportion of the code that has been tested.
+
+### Instructions to run Unit Testing:
+
+- pytest --cov=application --cov-report=term-missing
+
+or with a coverage report like below:
+
+- pytest --cov=application --cov-report=term-missing --cov-report html 
+
+### Instructions to run Integration Testing:
+
+In an Ubuntu 18.04 VM instance:
+- Install python, pip, and requirements
+- sudo apt install chromium-browser -y
+- sudo apt install wget unzip -y
+  
+  version=$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$(chromium-browser --version | grep -oP 'Chromium \K\d+'))
+
+  wget https://chromedriver.storage.googleapis.com/${version}/chromedriver_linux64.zip
+
+  sudo unzip chromedriver_linux64.zip -d /usr/bin
+
+  rm chromedriver_linux64.zip
+
 
 ![image](https://user-images.githubusercontent.com/82821693/119289331-4c5da100-bc42-11eb-94b3-67ae7055304f.png)
 
