@@ -172,3 +172,34 @@ To perform the testing for the project, pytest was used. This is true for both u
 The front-end design uses HTML templates as the user interface. The design used is simple and easily navigatable.
 
 The initial starting point of the application which consists of a login page:
+
+![image](https://user-images.githubusercontent.com/82821693/119289919-76fc2980-bc43-11eb-8451-ce69ab2a0bcd.png)
+
+Clicking on the Create a New Account redirects the user to the register page:
+
+![image](https://user-images.githubusercontent.com/82821693/119290025-aad74f00-bc43-11eb-8350-3bac161d22a5.png)
+
+Creating a user "admin" and loggin in yields the admin page:
+
+![image](https://user-images.githubusercontent.com/82821693/119290144-e114ce80-bc43-11eb-9461-8acb53ad889e.png)
+
+Clicking on the Edit Details button on a particular user gives the option to delete the user from the database (both the Users and Inventory tables):
+
+![image](https://user-images.githubusercontent.com/82821693/119290377-4ff22780-bc44-11eb-9470-1faeb0d0ed5f.png)
+
+Clicking on the logout button redirects the user back to the login page. Now logging in with an account that is different to "admin" results in going to the home page of the user:
+
+![image](https://user-images.githubusercontent.com/82821693/119290515-8a5bc480-bc44-11eb-88ba-40aad443098e.png)
+
+The user can add new items by clicking on the Add New Item button:
+
+![image](https://user-images.githubusercontent.com/82821693/119290585-aeb7a100-bc44-11eb-913b-d7b98d4bf3c3.png)
+
+The user is able to view and purchase items that are in stock and are for sale by other users by clicking on the Buy New Item button:
+
+![image](https://user-images.githubusercontent.com/82821693/119290747-0f46de00-bc45-11eb-8148-a194119e473a.png)
+
+The user also has the opportunity to sort their items in their desired way:
+
+![image](https://user-images.githubusercontent.com/82821693/119290879-4fa65c00-bc45-11eb-9891-e7fb2028daa1.png)
+
