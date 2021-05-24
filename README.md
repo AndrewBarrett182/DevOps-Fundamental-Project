@@ -119,3 +119,4 @@ To track the progress of the project, Jira was used.
 
 https://andrewbarrett.atlassian.net/jira/software/projects/TOM/boards/1
 
+![image](https://user-images.githubusercontent.com/82821693/119284143-ee778c00-bc36-11eb-8266-a3ec720b1c0e.png)
