@@ -215,6 +215,7 @@ An issue with the program currently is that the login function doesn't actually 
 The future improvements for this project includes:
 - The implementation of a many-to-many relationship
   - To create a Sales table with an intermediary Trade_Items table to store information of user's purchases
+![image](https://user-images.githubusercontent.com/82821693/119291977-5c2bb400-bc47-11eb-8172-c1720e58161b.png)
 - Implement a way to randomly shuffle the items that are for sale so that a user doesn't always see the same things
 - Implement a search function so a user can easily find something if the database gets much bigger
 - Make the user interface much more prettier and inviting
