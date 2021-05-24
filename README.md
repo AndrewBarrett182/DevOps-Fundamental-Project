@@ -111,6 +111,7 @@ The ERD contains two tables: Users and Inventory. As seen in the ERD, there is a
 
 ### CI Pipeline
 
+![image](https://user-images.githubusercontent.com/82821693/119286046-6778e280-bc3b-11eb-824d-7c117f60b7d3.png)
 
 
 ## Project Tracking
