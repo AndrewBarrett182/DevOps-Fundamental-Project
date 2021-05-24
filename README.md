@@ -157,3 +157,4 @@ The cards within the board have epics assigned to them so that it is clear what 
 
 ## Risk Assessment
 
+![image](https://user-images.githubusercontent.com/82821693/119288666-e6bce500-bc40-11eb-92c0-deb79e86b2f3.png)
