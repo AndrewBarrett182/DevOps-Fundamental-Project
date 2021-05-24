@@ -2,8 +2,10 @@ from selenium import webdriver
 from flask_testing import LiveServerTestCase
 from urllib.request import urlopen
 from flask import url_for
+
 from application import app, db
 from application.models import Users, Inventory
+
 
 class TestBase(LiveServerTestCase):
     def create_app(self):
@@ -179,9 +181,7 @@ class TestCreate(TestBase):
         self.driver.find_element_by_xpath('//*[@id="add_item"]').click()
         text = self.driver.find_element_by_xpath('/html/body/div[1]/form').text
         self.assertIn("Please enter an item name", text)
-
-##add from here
-
+    
     def test_add_invalid_stock_not_integer(self):
         self.driver.get(f'http://localhost:5000/add/andrew')
         name = self.driver.find_element_by_xpath('//*[@id="name"]')
