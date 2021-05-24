@@ -117,7 +117,7 @@ The ERD contains two tables: Users and Inventory. As seen in the ERD, there is a
 
 ### CI Pipeline
 
-![image](https://user-images.githubusercontent.com/82821693/119292213-d9572900-bc47-11eb-8b17-3931f4448419.png)
+![image](https://user-images.githubusercontent.com/82821693/119292307-07d50400-bc48-11eb-89b1-a495e51be91c.png)
 
 This is the Continuous Integration (CI) pipeline for this project. A flask framework was used working in conjuction with a Google Cloud Platform (GCP) Virtual Machine (VM) instance. Continuous Integration enables the development process to be more frequent and more reliable. 
 
